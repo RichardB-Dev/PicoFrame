@@ -147,7 +147,6 @@
             this.pnl_Frame.Name = "pnl_Frame";
             this.pnl_Frame.Size = new System.Drawing.Size(220, 286);
             this.pnl_Frame.TabIndex = 7;
-            this.pnl_Frame.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_Frame_Paint);
             // 
             // tb_DisplayMessage
             // 

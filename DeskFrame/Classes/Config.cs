@@ -17,7 +17,6 @@ namespace DeskFrame
 
         public AppConfig appConfig = new AppConfig();
         public string AppPath = AppDomain.CurrentDomain.BaseDirectory;
-        public string TempDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\DeskFrame\";
         public bool ConfigFileCreated = false;
 
         #endregion
@@ -36,21 +35,16 @@ namespace DeskFrame
         /// </summary>
         public void LoadAppConfig()
         {
-            if (!Directory.Exists(TempDataPath)) // Create temp directory if does not exist
-            {
-                System.IO.Directory.CreateDirectory(TempDataPath);
-            }
-
-            if (!File.Exists(TempDataPath + @"AppConfig.json")) // Create Config JSON file if does not exist
+            if (!File.Exists(AppPath + @"AppConfig.json")) // Create Config JSON file if does not exist
             {
                 WriteToSaveFile(); // Create file
-                string windowsStartUpFolder = @"C:\Users\Switch\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup";
+                string windowsStartUpFolder = Environment.GetFolderPath(Environment.SpecialFolder.Startup);
                 CreateShortcut("DeskFrame_Shortcut", windowsStartUpFolder, AppDomain.CurrentDomain.BaseDirectory + @"\DeskFrame.exe"); // Create start up shortcut
                 ConfigFileCreated = true;
             }
             else
             {
-                using (StreamReader r = new StreamReader(TempDataPath + @"AppConfig.json")) // Read saved config file
+                using (StreamReader r = new StreamReader(AppPath + @"AppConfig.json")) // Read saved config file
                 {
                     string json = r.ReadToEnd();
                     appConfig = JsonConvert.DeserializeObject<AppConfig>(json);
@@ -119,7 +113,7 @@ namespace DeskFrame
         private void WriteToSaveFile()
         {
             string writeJson = JsonConvert.SerializeObject(appConfig);
-            System.IO.File.WriteAllText(TempDataPath + @"AppConfig.json", writeJson);
+            System.IO.File.WriteAllText(AppPath + @"AppConfig.json", writeJson);
         }
 
         /// <summary>
@@ -130,7 +124,7 @@ namespace DeskFrame
         /// <returns></returns>
         public string CloneImage(string ImageDir, int frameIndex)
         {
-            string Directory_Images = TempDataPath + "Images";
+            string Directory_Images = AppPath + "Images";
             if (!Directory.Exists(Directory_Images))  // Create image directory if it doesnt exist
             {
                 System.IO.Directory.CreateDirectory(Directory_Images);
@@ -161,9 +155,8 @@ namespace DeskFrame
             IWshRuntimeLibrary.IWshShortcut shortcut = (IWshRuntimeLibrary.IWshShortcut)shell.CreateShortcut(shortcutLocation);
 
             shortcut.Description = "Desk Frame";   // The description of the shortcut
-          //  shortcut.IconLocation = @"c:\myicon.ico";           // The icon of the shortcut
-            shortcut.TargetPath = targetFileLocation;                 // The path of the file that will launch when the shortcut is run
-            shortcut.Save();                                    // Save the shortcut
+            shortcut.TargetPath = targetFileLocation; // The path of the file that will launch when the shortcut is run
+            shortcut.Save(); // Save the shortcut
         }
 
     }

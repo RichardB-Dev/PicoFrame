@@ -1,7 +1,6 @@
 ﻿using DeskFrame.Classes;
 using System;
 using System.Collections.Generic;
-using System.Deployment.Application;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
@@ -26,7 +25,7 @@ namespace DeskFrame
         /// Control form constructor
         /// </summary>
         public form_Control()
-        {
+        {      
             InitializeComponent();
             ni_DeskFrame.ContextMenuStrip = cms_NotifyMenu; // Add items to Notify Icon
             ni_DeskFrame.Visible = true;
@@ -39,10 +38,8 @@ namespace DeskFrame
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void form_Control_Load(object sender, EventArgs e)
-        {            
-            if (!System.Diagnostics.Debugger.IsAttached &&
-                configData.ConfigFileCreated &&
-                ApplicationDeployment.CurrentDeployment.IsFirstRun) // If just installed, minimize all open windows
+        {
+            if (configData.ConfigFileCreated) // If just installed, minimize all open windows
             {
                 MinimizeAll();
             }

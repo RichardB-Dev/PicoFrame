@@ -1,7 +1,6 @@
 ﻿using DeskFrame.Classes;
 using System;
 using System.Drawing;
-using System.IO;
 using System.Windows.Forms;
 
 
@@ -392,9 +391,5 @@ namespace DeskFrame
 
         #endregion
 
-        private void pnl_Frame_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }
