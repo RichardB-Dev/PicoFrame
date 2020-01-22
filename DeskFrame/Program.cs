@@ -16,7 +16,7 @@ namespace DeskFrame
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new form_DeskFrame());
+            Application.Run(new form_Control());
         }
     }
 }

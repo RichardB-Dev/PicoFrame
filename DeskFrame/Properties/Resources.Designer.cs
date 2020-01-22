@@ -59,5 +59,25 @@ namespace DeskFrame.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon icon_DeskFrame {
+            get {
+                object obj = ResourceManager.GetObject("icon_DeskFrame", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon icon16_DeskFrame {
+            get {
+                object obj = ResourceManager.GetObject("icon16_DeskFrame", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
     }
 }

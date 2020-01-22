@@ -26,7 +26,7 @@
     <ProductName>Desk Frame</ProductName>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <DisallowUrlActivation>true</DisallowUrlActivation>
-    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationRevision>7</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -52,7 +52,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>polaroid_23709.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\icon_DeskFrame.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>F23106E4D8944B3DF027C4C0C00311F11136E12F</ManifestCertificateThumbprint>
@@ -92,11 +92,11 @@
     <Compile Include="Classes\AppConfig.cs" />
     <Compile Include="Classes\Config.cs" />
     <Compile Include="Classes\Frame.cs" />
-    <Compile Include="form_DeskFrame.cs">
+    <Compile Include="form_Control.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="form_DeskFrame.Designer.cs">
-      <DependentUpon>form_DeskFrame.cs</DependentUpon>
+    <Compile Include="form_Control.Designer.cs">
+      <DependentUpon>form_Control.cs</DependentUpon>
     </Compile>
     <Compile Include="form_Frame.cs">
       <SubType>Form</SubType>
@@ -106,8 +106,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="form_DeskFrame.resx">
-      <DependentUpon>form_DeskFrame.cs</DependentUpon>
+    <EmbeddedResource Include="form_Control.resx">
+      <DependentUpon>form_Control.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form_Frame.resx">
       <DependentUpon>form_Frame.cs</DependentUpon>
@@ -139,9 +139,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="polaroid_23709.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
@@ -163,6 +160,12 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_DeskFrame.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon16_DeskFrame.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

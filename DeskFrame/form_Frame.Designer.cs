@@ -60,10 +60,10 @@
             this.menuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1});
-            this.menuStrip.Location = new System.Drawing.Point(-2, 208);
+            this.menuStrip.Location = new System.Drawing.Point(-3, 257);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip.Size = new System.Drawing.Size(34, 24);
+            this.menuStrip.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip.Size = new System.Drawing.Size(37, 28);
             this.menuStrip.TabIndex = 4;
             this.menuStrip.Text = "MenuStrip";
             // 
@@ -76,7 +76,7 @@
             this.newFrameToolStripMenuItem,
             this.removeFrameToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(28, 20);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(30, 24);
             this.toolStripMenuItem1.Text = "...";
             // 
             // sizeToolStripMenuItem
@@ -86,55 +86,55 @@
             this.mediumToolStripMenuItem,
             this.largeToolStripMenuItem});
             this.sizeToolStripMenuItem.Name = "sizeToolStripMenuItem";
-            this.sizeToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.sizeToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
             this.sizeToolStripMenuItem.Text = "Size";
             // 
             // smallToolStripMenuItem
             // 
             this.smallToolStripMenuItem.Name = "smallToolStripMenuItem";
-            this.smallToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.smallToolStripMenuItem.Size = new System.Drawing.Size(139, 26);
             this.smallToolStripMenuItem.Text = "Small";
             this.smallToolStripMenuItem.Click += new System.EventHandler(this.smallToolStripMenuItem_Click);
             // 
             // mediumToolStripMenuItem
             // 
             this.mediumToolStripMenuItem.Name = "mediumToolStripMenuItem";
-            this.mediumToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.mediumToolStripMenuItem.Size = new System.Drawing.Size(139, 26);
             this.mediumToolStripMenuItem.Text = "Medium";
             this.mediumToolStripMenuItem.Click += new System.EventHandler(this.mediumToolStripMenuItem_Click);
             // 
             // largeToolStripMenuItem
             // 
             this.largeToolStripMenuItem.Name = "largeToolStripMenuItem";
-            this.largeToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.largeToolStripMenuItem.Size = new System.Drawing.Size(139, 26);
             this.largeToolStripMenuItem.Text = "Large";
             this.largeToolStripMenuItem.Click += new System.EventHandler(this.largeToolStripMenuItem_Click);
             // 
             // editMessageToolStripMenuItem
             // 
             this.editMessageToolStripMenuItem.Name = "editMessageToolStripMenuItem";
-            this.editMessageToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.editMessageToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
             this.editMessageToolStripMenuItem.Text = "Edit Message";
             this.editMessageToolStripMenuItem.Click += new System.EventHandler(this.editMessageToolStripMenuItem_Click);
             // 
             // changeImageToolStripMenuItem
             // 
             this.changeImageToolStripMenuItem.Name = "changeImageToolStripMenuItem";
-            this.changeImageToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.changeImageToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
             this.changeImageToolStripMenuItem.Text = "Change Image";
             this.changeImageToolStripMenuItem.Click += new System.EventHandler(this.changeImageToolStripMenuItem_Click);
             // 
             // newFrameToolStripMenuItem
             // 
             this.newFrameToolStripMenuItem.Name = "newFrameToolStripMenuItem";
-            this.newFrameToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.newFrameToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
             this.newFrameToolStripMenuItem.Text = "New Frame";
             this.newFrameToolStripMenuItem.Click += new System.EventHandler(this.newFrameToolStripMenuItem_Click);
             // 
             // removeFrameToolStripMenuItem
             // 
             this.removeFrameToolStripMenuItem.Name = "removeFrameToolStripMenuItem";
-            this.removeFrameToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.removeFrameToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
             this.removeFrameToolStripMenuItem.Text = "Remove Frame";
             this.removeFrameToolStripMenuItem.Click += new System.EventHandler(this.removeFrameToolStripMenuItem_Click);
             // 
@@ -143,23 +143,23 @@
             this.pnl_Frame.Controls.Add(this.tb_DisplayMessage);
             this.pnl_Frame.Controls.Add(this.menuStrip);
             this.pnl_Frame.Location = new System.Drawing.Point(0, 0);
-            this.pnl_Frame.Margin = new System.Windows.Forms.Padding(2);
+            this.pnl_Frame.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnl_Frame.Name = "pnl_Frame";
-            this.pnl_Frame.Size = new System.Drawing.Size(165, 232);
+            this.pnl_Frame.Size = new System.Drawing.Size(220, 286);
             this.pnl_Frame.TabIndex = 7;
-            this.pnl_Frame.Click += new System.EventHandler(this.pnl_Frame_Click);
+            this.pnl_Frame.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_Frame_Paint);
             // 
             // tb_DisplayMessage
             // 
-            this.tb_DisplayMessage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.tb_DisplayMessage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.tb_DisplayMessage.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_DisplayMessage.Font = new System.Drawing.Font("Segoe Script", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_DisplayMessage.Location = new System.Drawing.Point(64, 204);
-            this.tb_DisplayMessage.Margin = new System.Windows.Forms.Padding(2);
+            this.tb_DisplayMessage.Location = new System.Drawing.Point(44, 251);
+            this.tb_DisplayMessage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tb_DisplayMessage.MaxLength = 100;
             this.tb_DisplayMessage.Name = "tb_DisplayMessage";
             this.tb_DisplayMessage.ReadOnly = true;
-            this.tb_DisplayMessage.Size = new System.Drawing.Size(89, 20);
+            this.tb_DisplayMessage.Size = new System.Drawing.Size(123, 24);
             this.tb_DisplayMessage.TabIndex = 5;
             this.tb_DisplayMessage.TabStop = false;
             this.tb_DisplayMessage.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -171,8 +171,9 @@
             this.btn_Add.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_Add.Font = new System.Drawing.Font("PMingLiU-ExtB", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Add.Location = new System.Drawing.Point(0, 0);
+            this.btn_Add.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Add.Name = "btn_Add";
-            this.btn_Add.Size = new System.Drawing.Size(150, 162);
+            this.btn_Add.Size = new System.Drawing.Size(200, 199);
             this.btn_Add.TabIndex = 0;
             this.btn_Add.Text = "+";
             this.btn_Add.UseVisualStyleBackColor = true;
@@ -182,38 +183,42 @@
             // 
             this.pnl_Image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pnl_Image.Controls.Add(this.btn_Add);
-            this.pnl_Image.Location = new System.Drawing.Point(8, 16);
+            this.pnl_Image.Location = new System.Drawing.Point(11, 20);
+            this.pnl_Image.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_Image.Name = "pnl_Image";
-            this.pnl_Image.Size = new System.Drawing.Size(150, 162);
+            this.pnl_Image.Size = new System.Drawing.Size(200, 199);
             this.pnl_Image.TabIndex = 2;
             // 
             // btn_NewFrame
             // 
-            this.btn_NewFrame.Location = new System.Drawing.Point(417, 208);
+            this.btn_NewFrame.Location = new System.Drawing.Point(19, 28);
+            this.btn_NewFrame.Margin = new System.Windows.Forms.Padding(4);
             this.btn_NewFrame.Name = "btn_NewFrame";
-            this.btn_NewFrame.Size = new System.Drawing.Size(75, 23);
+            this.btn_NewFrame.Size = new System.Drawing.Size(100, 28);
             this.btn_NewFrame.TabIndex = 8;
             this.btn_NewFrame.Text = "btn_NewFrame";
             this.btn_NewFrame.UseVisualStyleBackColor = true;
             // 
             // form_Frame
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(167, 233);
+            this.ClientSize = new System.Drawing.Size(221, 287);
             this.ControlBox = false;
-            this.Controls.Add(this.btn_NewFrame);
             this.Controls.Add(this.pnl_Image);
             this.Controls.Add(this.pnl_Frame);
+            this.Controls.Add(this.btn_NewFrame);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.menuStrip;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "form_Frame";
             this.ShowInTaskbar = false;
             this.Text = "Form1";
             this.Activated += new System.EventHandler(this.form_Frame_Activated);
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Deactivate += new System.EventHandler(this.form_Frame_Deactivate);
+            this.Load += new System.EventHandler(this.form_Frame_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.pnl_Frame.ResumeLayout(false);
