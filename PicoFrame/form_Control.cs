@@ -1,10 +1,10 @@
-﻿using DeskFrame.Classes;
+﻿using PicoFrame.Classes;
 using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
-namespace DeskFrame
+namespace PicoFrame
 {
     public partial class form_Control : Form
     {

@@ -1,4 +1,4 @@
-﻿namespace DeskFrame
+﻿namespace PicoFrame
 {
     partial class form_Control
     {
