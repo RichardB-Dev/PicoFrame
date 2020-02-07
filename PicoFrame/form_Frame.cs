@@ -100,11 +100,21 @@ namespace PicoFrame
             }
         }
 
+        /// <summary>
+        /// Dislpay monitor changed, reposition frames
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void form_Frame_LocationChanged(object sender, EventArgs e)
+        {
+            DockWindow();
+        }
+
         #endregion
 
         //***** Controller Handlers *****
         #region Controller Handlers
-            
+
         private void btn_Add_Click(object sender, EventArgs e)
         {
             if (SelectImage()) //Select frame image
@@ -390,6 +400,6 @@ namespace PicoFrame
         }
 
         #endregion
-
+         
     }
 }
