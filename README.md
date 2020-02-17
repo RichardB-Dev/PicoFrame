@@ -13,8 +13,8 @@ ________________________________________________________________________________
 
 
 ### **Download:** 
-- #### [Latest release](https://github.com/RichardB-Dev/PicoFrame/releases/latest)
-<br><sub> _(Extract folder and run setup)_ </sub></br>
+Find the latest release here:
+#### [PicoFrame Download](https://github.com/RichardB-Dev/PicoFrame/releases/latest)<br><sub> _(Extract folder and run setup)_ </sub></br>
 
 
 
