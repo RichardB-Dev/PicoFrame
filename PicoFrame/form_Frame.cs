@@ -13,7 +13,6 @@ namespace PicoFrame
 
         Config configData = new Config(); // Refrence Config Data
         Frame frameData = new Frame(); // Local Frame Data
-        Image frameImage;
         public int frameVerticalOffset = 0; // Vertical Frame Position Offset
 
         #endregion
@@ -45,7 +44,7 @@ namespace PicoFrame
             pnl_Image.Left = 10;
             pnl_Image.Top = 20;
             pnl_Image.Width = 200;
-            pnl_Image.Height = 200;            
+            pnl_Image.Height = 200;
         }
 
         /// <summary>
@@ -85,7 +84,7 @@ namespace PicoFrame
         {
             this.SendToBack();
         }
-        
+
         /// <summary>
         /// Frame unfocus
         /// </summary>
@@ -143,7 +142,7 @@ namespace PicoFrame
                 pnl_Frame.Focus();
             }
         }
-        
+
         #region Menu
 
         /// <summary>
@@ -155,7 +154,7 @@ namespace PicoFrame
         {
             SelectImage();
         }
-        
+
         /// <summary>
         /// Update frame form size - Small
         /// </summary>
@@ -212,6 +211,7 @@ namespace PicoFrame
         private void removeFrameToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RemoveFrame(); // Delete saved data
+            pnl_Image.Dispose();
             this.Close();
         }
 
@@ -232,13 +232,10 @@ namespace PicoFrame
         {
             if (!String.IsNullOrEmpty(pFrame.Image))
             {
-              //  frameImage = Image.FromFile(pFrame.Image);
-              //  pnl_Image.BackgroundImage.Dispose();
+                //  pnl_Image.BackgroundImage.Dispose();
                 pnl_Image.BackgroundImage = Image.FromFile(pFrame.Image);
                 tb_DisplayMessage.Text = pFrame.Message;
                 ScaleForm(pnl_Image.BackgroundImage.Size, frameData.Size);
-                           
-            
             }
         }
 
@@ -247,7 +244,7 @@ namespace PicoFrame
         /// </summary>
         public void SaveFrame()
         {
-            frameData = configData.SaveFrame(frameData);            
+            frameData = configData.SaveFrame(frameData);
         }
 
         /// <summary>
@@ -263,6 +260,7 @@ namespace PicoFrame
         /// </summary>
         private void RemoveFrame()
         {
+            pnl_Image.BackgroundImage = null;
             configData.RemoveFrame(frameData);
         }
 
@@ -276,26 +274,28 @@ namespace PicoFrame
         /// <returns></returns>
         private bool SelectImage()
         {
-            OpenFileDialog SelectedFile = new OpenFileDialog();
-            SelectedFile.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png"; //Allowed image filetypes
-            DialogResult result = SelectedFile.ShowDialog(); // Show the dialog.
-
-            if (result == DialogResult.OK) // Test result.
+            //OpenFileDialog SelectedFile = new OpenFileDialog();
+            using (OpenFileDialog SelectedFile = new OpenFileDialog())
             {
-                string imageFile = SelectedFile.FileName;
-                try
+                SelectedFile.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png"; //Allowed image filetypes
+                DialogResult result = SelectedFile.ShowDialog(); // Show the dialog.
+                if (result == DialogResult.OK) // Test result.
                 {
-                    if (pnl_Image.BackgroundImage != null) pnl_Image.BackgroundImage.Dispose();
-                    SaveImage(imageFile);
-                    SaveFrame();       
-                    pnl_Image.BackgroundImage = Image.FromFile(frameData.Image);
-                    ScaleForm(pnl_Image.BackgroundImage.Size, frameData.Size);
-                     
-                    return true;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Please select an image file type.");
+                    string imageFile = SelectedFile.FileName;
+                    try
+                    {
+                        if (pnl_Image.BackgroundImage != null) pnl_Image.BackgroundImage.Dispose(); ;
+                        SaveImage(imageFile);
+                        SaveFrame();
+                        pnl_Image.BackgroundImage = Image.FromFile(imageFile);
+                        ScaleForm(pnl_Image.BackgroundImage.Size, frameData.Size);
+
+                        return true;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error selecting image. Please select an image file type.");
+                    }
                 }
             }
             return false;
@@ -397,9 +397,13 @@ namespace PicoFrame
             mediumToolStripMenuItem.Enabled = pEnable;
             largeToolStripMenuItem.Enabled = pEnable;
             editMessageToolStripMenuItem.Enabled = pEnable;
+            if (frameData.Index == 1)
+            {
+                removeFrameToolStripMenuItem.Enabled = pEnable;
+            }
         }
 
         #endregion
-         
+
     }
 }
