@@ -3,7 +3,6 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 
-
 namespace PicoFrame
 {
     public partial class form_Frame : Form
@@ -42,9 +41,11 @@ namespace PicoFrame
             pnl_Frame.Width = 220;
             pnl_Frame.Height = 250;
             pnl_Image.Left = 10;
-            pnl_Image.Top = 20;
+            pnl_Image.Top = 10;
             pnl_Image.Width = 200;
             pnl_Image.Height = 200;
+            toolStripMenuItem1.BackColor = Color.White;
+     
         }
 
         /// <summary>
@@ -144,6 +145,11 @@ namespace PicoFrame
         }
 
         #region Menu
+
+        private void btn_Menu_Click(object sender, EventArgs e)
+        {
+            toolStripMenuItem1.ShowDropDown();
+        }
 
         /// <summary>
         /// Open file dialog to select new frame image
@@ -404,6 +410,6 @@ namespace PicoFrame
         }
 
         #endregion
-
+        
     }
 }
