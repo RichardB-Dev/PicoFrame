@@ -27,8 +27,8 @@ namespace PicoFrame
         public form_Control()
         {      
             InitializeComponent();
-            ni_DeskFrame.ContextMenuStrip = cms_NotifyMenu; // Add items to Notify Icon
-            ni_DeskFrame.Visible = true;
+            ni_PicoFrame.ContextMenuStrip = cms_NotifyMenu; // Add items to Notify Icon
+            ni_PicoFrame.Visible = true;
             this.Hide();
         }
 
@@ -171,6 +171,6 @@ namespace PicoFrame
         }
 
         #endregion
-        
+
     }
 }

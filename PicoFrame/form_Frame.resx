@@ -123,4 +123,33 @@
   <metadata name="menuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>184, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="toolStripMenuItem1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAEEAAABBCAYAAACO98lFAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAALiMAAC4jAXilP3YAAAAHdElNRQfkAhYDLix1KnOBAAABFklEQVR4Xu3bywnCUBgF
+        4ZRgCXaiJViSJViCpVmCHeicxQWRX4ySxMedDw640SRDEBdmkCa1Ypsf2iy27PJDm4URYAQYAUaAEWAE
+        GAFrtv/gDuzMqguu9rcSo7rgaqNUPzW/dfnJHpNHqN74rcv3URgBRoARYAQYAUaAEWAEGAFGgBFgBBgB
+        RoARYAQYAUaAEWAEGAFGgBFgBBgBRoARYAQYAUaAEWAEGAFGgBFgBEweIR84didWHWipzRbhFTtWHWip
+        tQj5Q2lej9lozx7pyUEjH1qd3FJ76aLecWTVgbPcfvH3EeJRiK4iRBWiuwhxH6LLCHEbotsI0UJ0HSES
+        ovsI0Z4z6DpCYwTkjsiJfGrtjtT7huEKLKYOJ/v8ktgAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="btn_Menu.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAACJJREFUOE9j+E8iGNVADEBoYAAD/GwgoEADkWBUA2Hw/z8Aw5TZQz/sVLkAAAAA
+        SUVORK5CYII=
+</value>
+  </data>
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAADAwLACQkJADoogAAV3q5AL6ScACqgv8AIuGHAMPDwwDnv8gADsn/AP///wAAAAAAAAAAAAAA
+        AAAAAAAAAAC7u7u7sAAAALu7u7uwAAAAuIiZmbAAAACziIOZsAAAALM4M5OwAAAAszMzM7AAAACzMzMz
+        sLsAsLMzMzOwuwtwszMzqrBrt3CzMzOqsGu7cLu7u7uwawuyIiIhAABrALt3VbREZmsAC7d3tkZmawAA
+        u3u2ZmZrAAALsLu7u7vgAwAA4AMAAOADAADgAwAA4AMAAOADAADgAAAAwAAAAIAAAAAAAAAAAAAAAIAA
+        AADAAAAA4AAAAPAAAAD5AAAA
+</value>
+  </data>
 </root>

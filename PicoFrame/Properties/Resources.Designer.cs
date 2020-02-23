@@ -63,19 +63,9 @@ namespace PicoFrame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Icon icon_PicoFrame {
+        internal static System.Drawing.Icon _16x16_icon_Application {
             get {
-                object obj = ResourceManager.GetObject("icon_PicoFrame", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon icon16_PicoFrame {
-            get {
-                object obj = ResourceManager.GetObject("icon16_PicoFrame", resourceCulture);
+                object obj = ResourceManager.GetObject("_16x16_icon_Application", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }

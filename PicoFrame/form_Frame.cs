@@ -3,7 +3,6 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 
-
 namespace PicoFrame
 {
     public partial class form_Frame : Form
@@ -13,7 +12,6 @@ namespace PicoFrame
 
         Config configData = new Config(); // Refrence Config Data
         Frame frameData = new Frame(); // Local Frame Data
-        Image frameImage;
         public int frameVerticalOffset = 0; // Vertical Frame Position Offset
 
         #endregion
@@ -43,9 +41,11 @@ namespace PicoFrame
             pnl_Frame.Width = 220;
             pnl_Frame.Height = 250;
             pnl_Image.Left = 10;
-            pnl_Image.Top = 20;
+            pnl_Image.Top = 10;
             pnl_Image.Width = 200;
-            pnl_Image.Height = 200;            
+            pnl_Image.Height = 200;
+            toolStripMenuItem1.BackColor = Color.White;
+     
         }
 
         /// <summary>
@@ -85,7 +85,7 @@ namespace PicoFrame
         {
             this.SendToBack();
         }
-        
+
         /// <summary>
         /// Frame unfocus
         /// </summary>
@@ -100,11 +100,21 @@ namespace PicoFrame
             }
         }
 
+        /// <summary>
+        /// Dislpay monitor changed, reposition frames
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void form_Frame_LocationChanged(object sender, EventArgs e)
+        {
+            DockWindow();
+        }
+
         #endregion
 
         //***** Controller Handlers *****
         #region Controller Handlers
-            
+
         private void btn_Add_Click(object sender, EventArgs e)
         {
             if (SelectImage()) //Select frame image
@@ -133,8 +143,13 @@ namespace PicoFrame
                 pnl_Frame.Focus();
             }
         }
-        
+
         #region Menu
+
+        private void btn_Menu_Click(object sender, EventArgs e)
+        {
+            toolStripMenuItem1.ShowDropDown();
+        }
 
         /// <summary>
         /// Open file dialog to select new frame image
@@ -145,7 +160,7 @@ namespace PicoFrame
         {
             SelectImage();
         }
-        
+
         /// <summary>
         /// Update frame form size - Small
         /// </summary>
@@ -202,6 +217,7 @@ namespace PicoFrame
         private void removeFrameToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RemoveFrame(); // Delete saved data
+            pnl_Image.Dispose();
             this.Close();
         }
 
@@ -222,13 +238,10 @@ namespace PicoFrame
         {
             if (!String.IsNullOrEmpty(pFrame.Image))
             {
-              //  frameImage = Image.FromFile(pFrame.Image);
-              //  pnl_Image.BackgroundImage.Dispose();
+                //  pnl_Image.BackgroundImage.Dispose();
                 pnl_Image.BackgroundImage = Image.FromFile(pFrame.Image);
                 tb_DisplayMessage.Text = pFrame.Message;
                 ScaleForm(pnl_Image.BackgroundImage.Size, frameData.Size);
-                           
-            
             }
         }
 
@@ -237,7 +250,7 @@ namespace PicoFrame
         /// </summary>
         public void SaveFrame()
         {
-            frameData = configData.SaveFrame(frameData);            
+            frameData = configData.SaveFrame(frameData);
         }
 
         /// <summary>
@@ -253,6 +266,7 @@ namespace PicoFrame
         /// </summary>
         private void RemoveFrame()
         {
+            pnl_Image.BackgroundImage = null;
             configData.RemoveFrame(frameData);
         }
 
@@ -266,26 +280,28 @@ namespace PicoFrame
         /// <returns></returns>
         private bool SelectImage()
         {
-            OpenFileDialog SelectedFile = new OpenFileDialog();
-            SelectedFile.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png"; //Allowed image filetypes
-            DialogResult result = SelectedFile.ShowDialog(); // Show the dialog.
-
-            if (result == DialogResult.OK) // Test result.
+            //OpenFileDialog SelectedFile = new OpenFileDialog();
+            using (OpenFileDialog SelectedFile = new OpenFileDialog())
             {
-                string imageFile = SelectedFile.FileName;
-                try
+                SelectedFile.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png"; //Allowed image filetypes
+                DialogResult result = SelectedFile.ShowDialog(); // Show the dialog.
+                if (result == DialogResult.OK) // Test result.
                 {
-                    if (pnl_Image.BackgroundImage != null) pnl_Image.BackgroundImage.Dispose();
-                    SaveImage(imageFile);
-                    SaveFrame();       
-                    pnl_Image.BackgroundImage = Image.FromFile(frameData.Image);
-                    ScaleForm(pnl_Image.BackgroundImage.Size, frameData.Size);
-                     
-                    return true;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Please select an image file type.");
+                    string imageFile = SelectedFile.FileName;
+                    try
+                    {
+                        if (pnl_Image.BackgroundImage != null) pnl_Image.BackgroundImage.Dispose(); ;
+                        SaveImage(imageFile);
+                        SaveFrame();
+                        pnl_Image.BackgroundImage = Image.FromFile(imageFile);
+                        ScaleForm(pnl_Image.BackgroundImage.Size, frameData.Size);
+
+                        return true;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error selecting image. Please select an image file type.");
+                    }
                 }
             }
             return false;
@@ -387,9 +403,13 @@ namespace PicoFrame
             mediumToolStripMenuItem.Enabled = pEnable;
             largeToolStripMenuItem.Enabled = pEnable;
             editMessageToolStripMenuItem.Enabled = pEnable;
+            if (frameData.Index == 1)
+            {
+                removeFrameToolStripMenuItem.Enabled = pEnable;
+            }
         }
 
         #endregion
-
+        
     }
 }

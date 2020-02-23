@@ -13,7 +13,8 @@ ________________________________________________________________________________
 
 
 ### **Download:** 
-- #### [DeskFrame_Setup_Version1.0.0.5.zip](https://github.com/RichardB-Dev/DeskFrame/files/4098909/DeskFrame_Setup_Version1.0.0.5.zip)<br><sub> _(Extract folder and run setup)_ </sub></br>
+Find the latest release here:
+#### [PicoFrame Download](https://github.com/RichardB-Dev/PicoFrame/releases/latest)<br><sub> _(Extract folder and run setup)_ </sub></br>
 
 
 
