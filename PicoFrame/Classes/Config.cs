@@ -16,7 +16,9 @@ namespace PicoFrame
         #region Public Members
 
         public AppConfig appConfig = new AppConfig();
-        public string AppPath = AppDomain.CurrentDomain.BaseDirectory;
+        //public string AppPath = AppDomain.CurrentDomain.BaseDirectory;
+        static public string AppPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\PicoFrame\\";
+
         public bool ConfigFileCreated = false;
 
         #endregion
@@ -35,6 +37,11 @@ namespace PicoFrame
         /// </summary>
         public void LoadAppConfig()
         {
+            if (!Directory.Exists(AppPath))  // Create image directory if it doesnt exist
+            {
+                System.IO.Directory.CreateDirectory(AppPath);
+            }
+
             if (!File.Exists(AppPath + @"AppConfig.json")) // Create Config JSON file if does not exist
             {
                 WriteToSaveFile(); // Create file
@@ -47,8 +54,7 @@ namespace PicoFrame
                 using (StreamReader r = new StreamReader(AppPath + @"AppConfig.json")) // Read saved config file
                 {
                     string json = r.ReadToEnd();
-                    appConfig = JsonConvert.DeserializeObject<AppConfig>(json);
-                }
+                    appConfig = JsonConvert.DeserializeObject<AppConfig>(json);                                    }
             }            
         }
                
