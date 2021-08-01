@@ -48,22 +48,21 @@
             this.cms_NotifyMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.closeDeskFrameToolStripMenuItem});
             this.cms_NotifyMenu.Name = "cms_NotifyMenu";
-            this.cms_NotifyMenu.Size = new System.Drawing.Size(196, 28);
+            this.cms_NotifyMenu.Size = new System.Drawing.Size(181, 48);
             // 
             // closeDeskFrameToolStripMenuItem
             // 
             this.closeDeskFrameToolStripMenuItem.Name = "closeDeskFrameToolStripMenuItem";
-            this.closeDeskFrameToolStripMenuItem.Size = new System.Drawing.Size(195, 24);
-            this.closeDeskFrameToolStripMenuItem.Text = "Close Desk Frame";
+            this.closeDeskFrameToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.closeDeskFrameToolStripMenuItem.Text = "Close PicoFrame";
             this.closeDeskFrameToolStripMenuItem.Click += new System.EventHandler(this.closeDeskFrameToolStripMenuItem_Click);
             // 
             // form_Control
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(311, 58);
+            this.ClientSize = new System.Drawing.Size(233, 47);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "form_Control";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
